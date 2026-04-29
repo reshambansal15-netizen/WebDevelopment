@@ -9,7 +9,7 @@
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             margin: 50px;
-            background: linear-gradient(to right, blue,lightblue);
+            background: linear-gradient(to right , blue , lightblue)
         }
 
         h1{
@@ -20,6 +20,7 @@
             display: flex;
             justify-content: center;
             margin: 20px 0;
+
         }
 
         .choices button{
@@ -29,13 +30,13 @@
             border: none;
             cursor: pointer;
             border-radius: 10px;
-
         }
+
         .rock {background-color: #ffcc00;}
         .paper {background-color: #66ccff; }
         .scisscor {background-color: #ff6666;}
 
-         #result{
+        #result{
             margin-top: 20px;
             font-size: 24px;
             font-weight: bold;
@@ -43,14 +44,13 @@
         }
 
         .scoreboard{
-            background: rgb(155, 239, 9);
+            background: white;
             font-size: 18px;
             margin-top: 20px;
             padding: 15px;
-             border-radius: 10px;
+            border-radius: 10px;
             display: block;
             box-shadow: 0 0 15px red;
-
         }
 
         .reset{
@@ -62,73 +62,89 @@
             border: none;
             border-radius: 5px;
         }
-
     </style>
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
 
     <div class="choices">
-   
-      <button class="rock" onclick="playGame('rock')">ROCK</button>
+        <button  class="rock" onclick="playGame('rock')"    >ROCK</button>
 
-      <button class="paper" onclick="playGame('paper')">PAPER</button>
+        <button  class="paper" onclick="playGame('paper')"   >PAPER</button>
 
-      <button class="scissor" onclick="playGame('scissors')">SCISSOR</button>
-
+        <button  class="scisscor" onclick="playGame('scissors')" >SCISSOR</button>
     </div>
 
-       <p id="result">Chosse an Option to the game</p>
+    <p id="result">Choose an Option To The Game</p>
 
-       <div>
+    <div class="scoreboard">
         <p><strong>Scoreboard</strong></p>
-        <p>Wins :   <span id="wins">0</span></p>
-        <p>Losses:  <span id="looses">0</span></p>
-        <p>Draw:    <span id="draws">0</span></p>
-       </div>
+        <p>Wins :   <span id="wins">0</span>   </p>
+        <p>Losses : <span id="losses">0</span></p>
+        <p>Draw :   <span id="draws">0</span>  </p>
+    </div>
 
-       <button class="reset">Reset</button>
+    <button class="reset" onclick="resetGame">Reset</button>
 
     <script>
-        let wins = 0
-        let losses = 0
-        let draw = 0
 
-        function playGame(userChoice){
+     let wins = 0
+     let losses = 0
+     let draw = 0
 
-            const choices = ['rock', 'paper', 'scissor']
+    
+     function playGame(userChoice){
 
-            const computerChoice = choices[ Math.floor(Math.random() *3)]  //*3 is the limit og generating number
+     const choices = [ 'rock' , 'paper' , 'scissors'  ]
 
-            let resultMessage = ''
+     const computerChoice = choices[ Math.floor(Math.random()*3)]
 
-            if(userChoice === computerChoice){   //'===' checks both value and datatype
+     let resultMessage = ''
 
-                    resultMessage = 'You pick the same Option, It is Draw - ' + userChoice
-                    draw++
+     if(userChoice === computerChoice){
+        resultMessage = 'You Pick The Same Option , It is Draw   ' + userChoice;
+        draw++ 
+     }
+     else if(
+        (userChoice === 'rock' && computerChoice ==='scissors') ||
+        (userChoice === 'paper'  && computerChoice === 'rock')  ||
+        (userChoice === 'scissors' && computerChoice === 'paper')
 
-            }  
-            else if((userChoice === 'rock' && computerChoice === 'scissors') ||
-                     (userChoice === 'paper' && computerChoice === 'rock') ||
-                      (userChoice === 'scissors' && computerChoice === 'paper')){
-
-                        resultMessage = 'You Won ' + userChoice + ' Beats ' + computerChoice
-                        wins++
-
-                }
-                else{
-                    resultMessage = 'You Lose ' + computerChoice + ' Beats ' + userChoice
-                    losses++
-                }
+     ){
+        resultMessage = 'You Won ' + userChoice + ' Beats ' + computerChoice
+        wins++
+     }else{
+        resultMessage = 'You Lose ' + computerChoice + 'Beats' + userChoice
+        losses++
+     }
 
 
 
-            document.getElementById("result").innerHTML = resultMessage
-            document.getElementById("wins").innerHTML = wins
-            document.getElementById("losses").innerHTML = losses
-            document.getElementById("draws").innerHTML = draw
+      document.getElementById("result").innerHTML = resultMessage
 
-        }
+      document.getElementById("wins").innerHTML = wins
+
+       document.getElementById("losses").innerHTML = losses
+
+        document.getElementById("draws").innerHTML = draw
+
+
+     }
+
+
+     //Reset Game Function
+     function resetGame() {
+    wins = 0;
+    losses = 0;
+    draw = 0;
+    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("draws").innerHTML = draw;
+    document.getElementById("result").innerHTML = "Game Reset! Choose an Option";
+}
+
+     
+     
 
     </script>
 </body>
