@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //async - Which help us to create async Function
+        //await - Handling The Waiting Time
+
+        //Promises
+        function loadMovie(movieName){
+                        
+            return new Promise( (resolve , reject)=>{
+                 console.log(`Loading ${movieName} ... `)
+
+
+                 setTimeout(()=>{
+                    resolve(`${movieName}   is Ready To watch`)
+                 },5000)
+            })
+        }
+
+    //
+       async function watchMovie(){
+
+        console.log("Getting Ready To Watch The Movie ..")
+
+        let MovieMessage =  await loadMovie("Spider man")
+
+        console.log(MovieMessage)
+
+        console.log("Enjoy The Weekend")
+       }
+       watchMovie() 
+
+
+       function add(){
+        console.log("Addition is " , 2+2)
+       }
+       add()
+    </script>
+</body>
+</html>
