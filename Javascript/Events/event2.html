@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            overflow: auto;
+        }
+
+        .content{
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Welcome to Event</h1>
+
+    <input id="myInput" placeholder="Type Something...">
+
+    <div id="mydiv">
+        <div class="content">Scroll Inside Me</div>
+    </div>
+
+
+    <script>
+        const input = document.getElementById("myInput")
+
+        const div = document.querySelector("#mydiv")
+
+        //MouseOver
+        function handleMouseOver(){
+            div.style.backgroundColor = "red"
+        }
+
+        div.addEventListener('mouseover', handleMouseOver)
+
+        //Mouseout
+        function handleMouseOut(){
+            div.style.backgroundColor = "green"
+        }
+
+        div.addEventListener('mouseout', handleMouseOut)
+
+        //Scroll
+        div.addEventListener('scroll', function(){
+            console.log('Scrolled')
+        })
+
+        //KeyBoard
+        //1. KeyUp - Key Released Output
+
+        function handleKeyUp(e){
+            console.log('Key Released: ' + e.key)
+        }
+        input.addEventListener('keyup', handleKeyUp)
+
+
+         //1. KeyDown - Key Pressed Output
+
+        function handleKeyDown(e){
+            console.log('Key Pressed: ' + e.key)
+        }
+        input.addEventListener('keydown', handleKeyDown)
+
+        //3. Change: Happening Input
+
+        function handleChange(x){
+            console.log('value in Input: ', x.target.value)
+        }
+        input.addEventListener('change' , handleChange)
+
+    </script>
+</body>
+</html>
