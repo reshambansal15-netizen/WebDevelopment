@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Add to Cart</button>
+
+    <p id="msg"></p>
+
+    <script>
+        const button = document.getElementById("btn")
+
+        const message = document.getElementById("msg")
+
+        //TagName/Variable.addEventListener('Type of Event', Task)
+
+        button.addEventListener('click', function(){  // dblclick - for DoubleClick
+            message.textContent = "Product Added"
+        })
+    </script>
+</body>
+</html>
