@@ -65,18 +65,8 @@ function JobsPage() {
 
       </div>
 
-      <div className="jobs-grid">
-
-        {filteredJobs.map((job) => (
-
-          <div
-            className="job-card"
-            key={job.id}
-            onClick={() =>
-              navigate("/jobdetails", {
-                state: job,
-              })
-            } >
+      <div className="jobs-grid">  {filteredJobs.map((job) => ( <div className="job-card"  key={job.id}
+            onClick={() => navigate("/jobdetails", {state: job,}) }  >
 
             <h2>{job.title}</h2>
 
@@ -92,9 +82,7 @@ function JobsPage() {
               <b>Type:</b> {job.type}
             </p>
 
-            <button>
-              View Details
-            </button>
+            <button> View Details </button>
 
           </div>
 
