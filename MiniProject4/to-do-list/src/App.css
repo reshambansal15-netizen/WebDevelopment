@@ -1,0 +1,205 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #ffd6e8,
+    #ffe6f2,
+    #fff0f5
+  );
+}
+
+/* NAVBAR*/
+
+.navbar{
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(255, 182, 193, 0.3);
+}
+
+.navbar h2{
+  color: #ff4d94;
+}
+
+.nav-links{
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: #ff4d94;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover{
+  color: #ff1493;
+}
+
+/* HOME PAGE*/
+
+.home{
+  text-align: center;
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.home h1{
+  font-size: 3rem;
+  color: #ff4d94;
+}
+
+.home p {
+  margin-top: 15px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.buttons {
+  margin-top: 35px;
+}
+
+.buttons button {
+  margin: 10px;
+}
+
+/* BUTTONS */
+
+button {
+  background: linear-gradient(
+    135deg,
+    #ff85b3,
+    #ff4d94
+  );
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 77, 148, 0.4);
+}
+
+/* CARD */
+
+.card {
+  max-width: 750px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
+}
+
+.card h1 {
+  text-align: center;
+  color: #ff4d94;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid #ffcce0;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1rem;
+}
+
+
+input:focus,
+textarea:focus {
+  border-color: #ff4d94;
+}
+
+/* TODO LIST */
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+li {
+  background: #fff5f8;
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* NOTES */
+
+.note {
+  background: #fff5f8;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
+.note-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* DELETE BUTTON */
+
+.delete {
+  background: linear-gradient(
+    135deg,
+    #ff6b81,
+    #ff4757
+  );
+}
+
+/* HINT */
+
+.hint {
+  text-align: center;
+  margin-top: 15px;
+  color: #888;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .home h1 {
+    font-size: 2.2rem;
+  }
+
+  .card {
+    margin: 20px;
+  }
+}
