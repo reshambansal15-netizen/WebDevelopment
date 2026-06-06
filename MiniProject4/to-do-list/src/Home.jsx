@@ -11,11 +11,11 @@ function Home(){
 
             <div className="buttons">
                 <Link to="/todo">
-                    <button>Open Todo App </button>
+                    <button>Open Todo </button>
                 </Link>
 
                 <Link to="/notes">
-                    <button>Open Notes App </button>
+                    <button>Open Notes </button>
                 </Link>
             </div>
         </div>

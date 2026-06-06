@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import Todo from "./Todo";
 import Notes from "./Notes";
+import teddyGif from "./teddy.gif"
 
 function App(){
   return(
@@ -14,6 +15,8 @@ function App(){
       <Route path="/todo" element={<Todo />} />
       <Route path="/notes" element={<Notes />} />
     </Routes>
+
+    <img src={teddyGif} alt="Teddy Bear" className="teddy-gif" />
     </>
   );
 }
