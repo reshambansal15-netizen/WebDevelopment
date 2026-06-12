@@ -124,3 +124,72 @@ body{
   color:white;
   cursor:pointer;
 }
+
+/* ===== Dark Mode ===== */
+.dark{
+  min-height:100vh;
+  color:#e8e2db;
+  background:linear-gradient(
+    135deg,
+    #1f1b18,
+    #15120f,
+    #0e0c0a
+  );
+}
+
+.dark .navbar{
+  background:rgba(30,28,26,.6);
+}
+
+.dark .navbar h2{
+  color:#e0c9b8;
+}
+
+.dark .navbar a{
+  color:#e8e2db;
+}
+
+.dark .glass{
+  background:rgba(40,36,32,.5);
+}
+
+.dark .hero h1{
+  color:#e0c9b8;
+}
+
+.dark .hero p{
+  color:#cfc7bf;
+}
+
+.dark .badge{
+  background:#2a2622;
+  color:#e8e2db;
+}
+
+.dark .hero button,
+.dark .card button{
+  background:#e0c9b8;
+  color:#1a1a1a;
+}
+
+.dark .card{
+  background:#262220;
+  color:#e8e2db;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.dark .search,
+.dark input{
+  background:#262220;
+  color:#e8e2db;
+  border:1px solid #3a342f;
+}
+
+.dark .themeBtn{
+  background:#2a2622;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  border:none;
+  cursor:pointer;
+}

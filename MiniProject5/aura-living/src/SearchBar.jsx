@@ -1,15 +1,10 @@
-function SearchBar({
-  search,
-  setSearch,
-}) {
+function SearchBar({ search, setSearch }) {
   return (
     <input
       className="search"
       placeholder="Search products..."
       value={search}
-      onChange={(e) =>
-        setSearch(e.target.value)
-      }
+      onChange={(e) => setSearch(e.target.value)}
     />
   );
 }

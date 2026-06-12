@@ -4,12 +4,10 @@ function Checkout() {
       <h1>Checkout</h1>
 
       <input placeholder="Name" />
-
       <input placeholder="Address" />
-
       <input placeholder="Card Number" />
 
-      <button> Place Order </button>
+      <button>Place Order</button>
     </div>
   );
 }

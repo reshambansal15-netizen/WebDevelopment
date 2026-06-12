@@ -20,17 +20,11 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/products" element={<Products />} />
-
         <Route path="/product/:id" element={<ProductDetails />} />
-
         <Route path="/cart" element={<Cart />} />
-
         <Route path="/wishlist" element={<Wishlist />} />
-
         <Route path="/checkout" element={<Checkout />} />
-      
       </Routes>
     </div>
   );

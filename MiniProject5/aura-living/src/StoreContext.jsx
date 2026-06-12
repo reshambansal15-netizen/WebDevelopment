@@ -8,7 +8,7 @@ export const StoreProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const addToCart = (product) => {
-    const exists = cart.find( (item) => item.id === product.id );
+    const exists = cart.find((item) => item.id === product.id);
 
     if (exists) {
       setCart(
@@ -16,22 +16,19 @@ export const StoreProvider = ({ children }) => {
           item.id === product.id ? { ...item, qty: item.qty + 1 } : item
         )
       );
-    } 
-    else {
-      setCart([
-        ...cart,
-        { ...product, qty: 1 }
-      ]);
+    } else {
+      setCart([...cart, { ...product, qty: 1 }]);
     }
   };
 
   const removeFromCart = (id) => {
-    setCart( cart.filter((item) => item.id !== id) );
+    setCart(cart.filter((item) => item.id !== id));
   };
 
-  const increase = (id) => { 
+  const increase = (id) => {
     setCart(
-      cart.map((item) => item.id === id  ? { ...item, qty: item.qty + 1 }  : item
+      cart.map((item) =>
+        item.id === id ? { ...item, qty: item.qty + 1 } : item
       )
     );
   };
@@ -40,7 +37,9 @@ export const StoreProvider = ({ children }) => {
     setCart(
       cart
         .map((item) =>
-          item.id === id  ? { ...item, qty: item.qty - 1 }  : item ).filter((item) => item.qty > 0)
+          item.id === id ? { ...item, qty: item.qty - 1 } : item
+        )
+        .filter((item) => item.qty > 0)
     );
   };
 
@@ -59,7 +58,7 @@ export const StoreProvider = ({ children }) => {
         removeFromCart,
         increase,
         decrease,
-        addWishlist
+        addWishlist,
       }}
     >
       {children}
