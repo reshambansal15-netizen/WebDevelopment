@@ -12,7 +12,7 @@ app.use(express.json()) //Json Format Data
 //MONGOOSE CONNECTION - Backend-Database CONNECTION
 //1. Connect -  mongodb://localhost:27017/Database_name
 
-mongoose.connect('mongodb://localhost:27017/Register')
+mongoose.connect('mongodb://localhost:27017/register')
 
 .then(()=>console.log("MongoDB Connected"))
 
@@ -73,6 +73,35 @@ app.post('/register' , async(req,res)=>{
     res.json({
         message: "User Registeration Successfully"
     })
+})
+
+// Login -
+
+app.post("/login" , async(req,res)=> {
+
+    const{email,password} = req.body
+
+    //Find User
+    const user = await User.findOne({email})
+
+    if(!user){
+        return res.json({
+            message:"User not Found - Register First"
+        })
+    }
+
+    //Compared Password
+    const valid = await bcrypt.compare(password, user.password)
+
+    if(valid){
+        res.json({
+            message:"Login Successfully"
+        })
+    }else{
+        res.json({
+            message:"Incorrect Password"
+        })
+    }
 })
 
 //Server -

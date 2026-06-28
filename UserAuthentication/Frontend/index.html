@@ -47,13 +47,32 @@
 
            <input type="password" id="password" placeholder="password" required>
 
-           <button onclick="register()">Register/Login</button>
+           <button onclick="register()">Register</button>
+           <button onclick="login()">Login</button>
 
     
        <p id="responseMsg"></p>
     </div>
 
     <script>
+
+        async function login() {
+
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+            
+
+            //Frontend - Backend Connection
+            const response = await fetch('http://localhost:3000/login',{
+                method:"POST" ,
+                headers:{"Content-Type":"application/json"},
+                body: JSON.stringify({email, password})
+            });
+
+            const result = await response.json();
+            document.getElementById("responseMsg").innerText = result.message
+        }
+
 
         async function register() {
 
