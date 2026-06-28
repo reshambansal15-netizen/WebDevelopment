@@ -3,6 +3,7 @@ const cors = require('cors') //Data Sharing
 const bcrypt = require('bcrypt') // Hash the data, we are using for password
 const bodyParser = require('body-parser') //Help us to pass data
 const mongoose = require('mongoose') //Backend-Database connection
+require('dotenv').config()
 
 const app = express()
 
@@ -12,7 +13,7 @@ app.use(express.json()) //Json Format Data
 //MONGOOSE CONNECTION - Backend-Database CONNECTION
 //1. Connect -  mongodb://localhost:27017/Database_name
 
-mongoose.connect('mongodb://localhost:27017/register')
+mongoose.connect('process.env.MONGO_URI')
 
 .then(()=>console.log("MongoDB Connected"))
 
