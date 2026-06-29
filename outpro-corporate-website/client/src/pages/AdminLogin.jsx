@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import { toast } from "react-toastify";
+
 function AdminLogin() {
   const navigate = useNavigate();
 
@@ -24,7 +26,7 @@ function AdminLogin() {
 
       navigate("/dashboard");
     } catch {
-      alert("Invalid Username or Password");
+      toast.error("Invalid Username or Password");
     }
   };
 

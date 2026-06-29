@@ -1,8 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
+  const { darkMode, toggleTheme } = useTheme();
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+    <nav
+      className={`navbar navbar-expand-lg sticky-top shadow ${
+        darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
+      }`}
+    >
       <div className="container">
 
         <Link className="navbar-brand fw-bold fs-3" to="/">
@@ -11,6 +19,7 @@ function Navbar() {
 
         <button
           className="navbar-toggler"
+          type="button"
           data-bs-toggle="collapse"
           data-bs-target="#menu"
         >
@@ -18,7 +27,6 @@ function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="menu">
-
           <ul className="navbar-nav ms-auto align-items-lg-center">
 
             <li className="nav-item">
@@ -60,8 +68,19 @@ function Navbar() {
               </NavLink>
             </li>
 
-          </ul>
+            {/* Theme Toggle */}
+            <li className="nav-item ms-lg-3">
+              <button
+                className={`btn ${
+                  darkMode ? "btn-outline-light" : "btn-outline-dark"
+                }`}
+                onClick={toggleTheme}
+              >
+                {darkMode ? <FaSun /> : <FaMoon />}
+              </button>
+            </li>
 
+          </ul>
         </div>
 
       </div>

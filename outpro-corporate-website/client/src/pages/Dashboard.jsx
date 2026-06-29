@@ -1,8 +1,22 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Dashboard() {
   const [contacts, setContacts] = useState([]);
+
+  const totalMessages = contacts.length;
+
+const todayMessages = contacts.filter((contact) => {
+  if (!contact.createdAt) return false;
+
+  return (
+    new Date(contact.createdAt).toDateString() ===
+    new Date().toDateString()
+  );
+}).length;
+
+
   const [search, setSearch] = useState("");
 
   // Fetch all contacts
@@ -52,10 +66,11 @@ function Dashboard() {
         },
       }
     );
+    toast.success("Message deleted successfully!");
 
     fetchContacts();
   } catch (error) {
-    console.error(error);
+    toast.error("Unable to delete message.");
   }
 };
 
@@ -86,6 +101,34 @@ function Dashboard() {
           Logout
         </button>
       </div>
+
+      <div className="row mb-4">
+
+  <div className="col-md-4">
+    <div className="card shadow border-0 text-center p-4">
+      <h1>📨</h1>
+      <h3>{totalMessages}</h3>
+      <p>Total Messages</p>
+    </div>
+  </div>
+
+  <div className="col-md-4">
+    <div className="card shadow border-0 text-center p-4">
+      <h1>👥</h1>
+      <h3>{totalMessages}</h3>
+      <p>Total Clients</p>
+    </div>
+  </div>
+
+  <div className="col-md-4">
+    <div className="card shadow border-0 text-center p-4">
+      <h1>📅</h1>
+      <h3>{todayMessages}</h3>
+      <p>Today's Messages</p>
+    </div>
+  </div>
+
+</div>
 
       <input
         type="text"

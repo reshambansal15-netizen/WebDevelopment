@@ -355,3 +355,103 @@ font-size:35px;
 color:#0d6efd;
 
 }
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 95px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: #0d6efd;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,.25);
+  transition: all .3s ease;
+  z-index: 9999;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ===========================
+      DARK MODE
+=========================== */
+
+body.dark-mode {
+  background: #121212;
+  color: #f5f5f5;
+  transition: 0.4s;
+}
+
+body.dark-mode .navbar {
+  background: #1c1c1c !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .service-card {
+  background: #222;
+  color: white;
+}
+
+body.dark-mode .footer {
+  background: #181818;
+}
+
+body.dark-mode .table {
+  color: white;
+}
+
+body.dark-mode .table-dark {
+  background: #000;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #bbb;
+}
+
+body.dark-mode .btn-outline-dark {
+  color: white;
+  border-color: white;
+}
+
+body.dark-mode .why-section,
+body.dark-mode .stats-section,
+body.dark-mode .about-section {
+  background: #181818;
+}

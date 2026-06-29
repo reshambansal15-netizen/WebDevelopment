@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function Contact() {
   const [form, setForm] = useState({
@@ -27,7 +28,7 @@ function Contact() {
         form
       );
 
-      setStatus(res.data.message);
+      toast.success("Message sent successfully!");
 
       setForm({
         name: "",
@@ -38,7 +39,7 @@ function Contact() {
 
     } catch (err) {
       console.error(err);
-      setStatus("Failed to send message.");
+      toast.error("Failed to send message!");
     }
   };
 
