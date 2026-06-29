@@ -411,28 +411,61 @@ body.dark-mode {
   transition: 0.4s;
 }
 
+/* Navbar */
 body.dark-mode .navbar {
   background: #1c1c1c !important;
 }
 
-body.dark-mode .card,
-body.dark-mode .service-card {
-  background: #222;
-  color: white;
-}
-
-body.dark-mode .footer {
+/* Sections */
+body.dark-mode .why-section,
+body.dark-mode .stats-section,
+body.dark-mode .about-section,
+body.dark-mode .team-section {
   background: #181818;
 }
 
-body.dark-mode .table {
-  color: white;
+/* Cards */
+body.dark-mode .card,
+body.dark-mode .service-card,
+body.dark-mode .portfolio-card,
+body.dark-mode .portfolio-item,
+body.dark-mode .testimonial-card,
+body.dark-mode .testimonial-page-card,
+body.dark-mode .service-page-card,
+body.dark-mode .pricing-card,
+body.dark-mode .team-card,
+body.dark-mode .about-card,
+body.dark-mode .value-card {
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+  border: 1px solid #333;
 }
 
-body.dark-mode .table-dark {
-  background: #000;
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: white !important;
 }
 
+/* Paragraphs */
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span {
+  color: #d6d6d6 !important;
+}
+
+/* Icons */
+body.dark-mode .service-icon,
+body.dark-mode .service-page-icon,
+body.dark-mode .quote-icon {
+  color: #4da3ff !important;
+}
+
+/* Forms */
 body.dark-mode input,
 body.dark-mode textarea {
   background: #2c2c2c;
@@ -445,13 +478,23 @@ body.dark-mode textarea::placeholder {
   color: #bbb;
 }
 
+/* Tables */
+body.dark-mode .table {
+  color: white;
+}
+
+body.dark-mode .table-dark {
+  background: #000;
+}
+
+/* Buttons */
 body.dark-mode .btn-outline-dark {
   color: white;
   border-color: white;
 }
 
-body.dark-mode .why-section,
-body.dark-mode .stats-section,
-body.dark-mode .about-section {
+/* Footer */
+body.dark-mode footer {
   background: #181818;
+  color: white;
 }
